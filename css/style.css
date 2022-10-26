@@ -60,7 +60,8 @@ img{
   display: none;
   right: 10px;
   top: 10px;
-  color: aliceblue;
+  color: rgb(255, 255, 255);
+  text-shadow: 0 0 5px #000000;
 }
 .text.active{
   display: block;
@@ -72,7 +73,7 @@ img{
 }
 
 .text p{
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   text-align: end;
 }
 

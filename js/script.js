@@ -16,27 +16,27 @@ E se volessi un bottone per invertire la “direzione” del carosello?
 const immagini = [
   {
     nome: "Argentina",
-    descrizione: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora quod, aliquid",
+    descrizione: " Il Paese del tango è capace di offrire ai viaggiatori paesaggi straordinari",
     pic: "argentina.jpg"
   },
   {
     nome: "Chile",
-    descrizione: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora quod, aliquid",
+    descrizione: "Preparati per un'avventura senza precedenti da nord, con il deserto più secco del mondo, al sud australe con il ghiaccio eterno e cascate invertite",
     pic: "chile.jpg"
   },
   {
     nome: "Colombia",
-    descrizione: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora quod, aliquid",
+    descrizione: "La maggior parte del paese, è coperta di montagne come le Ande",
     pic: "colombia.jpg"
   },
   {
     nome: "Perù",
-    descrizione: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora quod, aliquid",
+    descrizione: "Il Perù è un paese megadiverso con habitat che variano dalle pianure aride della costa del Pacifico, alle vette delle Ande che si estendono da nord a sud-est",
     pic: "peru.jpg"
   },
   {
     nome: "Svezia",
-    descrizione: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora quod, aliquid",
+    descrizione: " per i suoi paesaggi mozzafiato, i pittoreschi villaggi di pescatori, la terra delle renne e il sole estivo senza fine",
     pic: "svezia.jpg"
   }
 ]
