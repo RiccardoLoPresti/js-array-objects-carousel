@@ -13,4 +13,71 @@ E se volessi un bottone per invertire la “direzione” del carosello?
 ****
 */
 
+const immagini = [
+  {
+    nome: "Argentina",
+    descrizione: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora quod, aliquid",
+    pic: "argentina.jpg"
+  },
+  {
+    nome: "Chile",
+    descrizione: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora quod, aliquid",
+    pic: "chile.jpg"
+  },
+  {
+    nome: "Colombia",
+    descrizione: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora quod, aliquid",
+    pic: "colombia.jpg"
+  },
+  {
+    nome: "Perù",
+    descrizione: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora quod, aliquid",
+    pic: "peru.jpg"
+  },
+  {
+    nome: "Svezia",
+    descrizione: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora quod, aliquid",
+    pic: "svezia.jpg"
+  }
+]
+
+const imgWrapper = document.querySelector('.img-wrapper');
+const thumbWrapper = document.querySelector('.thumbnail-wrapper');
+const prev = document.getElementById('btn-prev');
+const next = document.getElementById('btn-next');
+
+immagini.forEach((immagine) =>{
+
+  let imgSlider = `
+    <div class="text">
+      <h4>${immagine.nome}</h4>
+      <p>${immagine.descrizione}</p>
+    </div>
+
+    <img class="items" src="img/${immagine.pic}"  alt="${immagine.nome}">
+  `;
+
+  let thumbSlider = `
+    <div class="thumbnail-img">
+      <img src="img/${immagine.pic}" alt="${immagine.nome}">
+    </div>
+  `;
+
+  imgWrapper.innerHTML += imgSlider;
+  thumbWrapper.innerHTML += thumbSlider;
+
+})
+
+let counter = 0;
+
+const element = document.getElementsByClassName('items');
+const text = document.getElementsByClassName('text');
+
+element[counter].classList.add('active');
+text[counter].classList.add('active');
+
+
+function stampImmage() {
+  
+}
 
