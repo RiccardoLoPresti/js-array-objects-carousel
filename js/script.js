@@ -80,10 +80,15 @@ const thumb = document.getElementsByClassName('thumbnail-img');
 element[counter].classList.add('active');
 text[counter].classList.add('active');
 thumb[counter].classList.add('active');
+play.innerHTML ='PLAY'
 
 play.addEventListener('click', function(){
   console.log(isPlay);
   autoPlay();
+})
+
+invert.addEventListener('click', function(){
+  console.log('ciao',invert);
 })
 
 nextBtn.addEventListener('click', function(){
@@ -97,12 +102,13 @@ function next(isNext){
   element[counter].classList.remove('active');
   text[counter].classList.remove('active');
   thumb[counter].classList.remove('active');
-  if(!isNext){
-    counter++
-    if(counter == 5 ) counter = 0;
-  }else{
+  if(isNext){
     counter--
     if(counter < 0) counter = 4;
+    
+  }else{
+    counter++
+    if(counter == 5 ) counter = 0;
   }
   console.log(counter);
   element[counter].classList.add('active');
@@ -115,13 +121,15 @@ function autoPlay(){
     console.log('clear');
     clearInterval(auto);
     isPlay = false;
+    play.innerHTML ='PLAY'
     return;
   }
   if(!isPlay){
     isPlay = true;
+    play.innerHTML ='STOP'
     console.log(isPlay, 'interval');
     auto = setInterval(function(){
-      next(isNext)
+      next(!isNext)
     }, 2500)
   }
 }
