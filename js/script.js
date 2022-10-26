@@ -45,6 +45,8 @@ const imgWrapper = document.querySelector('.img-wrapper');
 const thumbWrapper = document.querySelector('.thumbnail-wrapper');
 const prevBtn = document.getElementById('btn-prev');
 const nextBtn = document.getElementById('btn-next');
+const play = document.getElementById('btn-start');
+const invert = document.getElementById('btn-invert');
 
 immagini.forEach((immagine) =>{
 
@@ -69,7 +71,8 @@ immagini.forEach((immagine) =>{
 
 let counter = 0;
 let isNext = true;
-
+let isPlay = false;
+let auto;
 const element = document.getElementsByClassName('items');
 const text = document.getElementsByClassName('text');
 const thumb = document.getElementsByClassName('thumbnail-img');
@@ -78,7 +81,10 @@ element[counter].classList.add('active');
 text[counter].classList.add('active');
 thumb[counter].classList.add('active');
 
-autoPlay();
+play.addEventListener('click', function(){
+  console.log(isPlay);
+  autoPlay();
+})
 
 nextBtn.addEventListener('click', function(){
   next(!isNext);
@@ -105,11 +111,17 @@ function next(isNext){
 }
 
 function autoPlay(){
-  return auto = setInterval(function(){
-    next()
-  }, 2500)
-}
-
-function stop(){
-  clearInterval(auto)
+  if(isPlay){
+    console.log('clear');
+    clearInterval(auto);
+    isPlay = false;
+    return;
+  }
+  if(!isPlay){
+    isPlay = true;
+    console.log(isPlay, 'interval');
+    auto = setInterval(function(){
+      next(isNext)
+    }, 2500)
+  }
 }

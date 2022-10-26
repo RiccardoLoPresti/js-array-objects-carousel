@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css' integrity='sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==' crossorigin='anonymous'/>
   <link rel="stylesheet" href="css/style.css">
   <script src="js/script.js" defer></script>
   <title>objects carousel</title>
@@ -12,7 +13,7 @@
   
   <div class="container">
 
-    <div class="main-wrapper" onmouseover="stop()" onmouseout="autoPlay()">
+    <div class="main-wrapper" onmouseover="stop()">
       
       <div class="img-wrapper">
 
@@ -33,10 +34,15 @@
 
       </div>
 
-      <div id="btn-prev"><</div>
-      <div id="btn-next">></div>
+      <div id="btn-prev"><i class="fa-solid fa-chevron-left"></i></div>
+      <div id="btn-next"><i class="fa-solid fa-chevron-right"></i></div>
+
+      <button id="btn-start">Start</button>
+      <button id="btn-invert">Invert</button>
 
     </div>
+
+   
 
   </div>
 
