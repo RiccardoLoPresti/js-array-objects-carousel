@@ -43,8 +43,8 @@ const immagini = [
 
 const imgWrapper = document.querySelector('.img-wrapper');
 const thumbWrapper = document.querySelector('.thumbnail-wrapper');
-const prev = document.getElementById('btn-prev');
-const next = document.getElementById('btn-next');
+const prevBtn = document.getElementById('btn-prev');
+const nextBtn = document.getElementById('btn-next');
 
 immagini.forEach((immagine) =>{
 
@@ -65,19 +65,51 @@ immagini.forEach((immagine) =>{
 
   imgWrapper.innerHTML += imgSlider;
   thumbWrapper.innerHTML += thumbSlider;
-
 })
 
 let counter = 0;
+let isNext = true;
 
 const element = document.getElementsByClassName('items');
 const text = document.getElementsByClassName('text');
+const thumb = document.getElementsByClassName('thumbnail-img');
 
 element[counter].classList.add('active');
 text[counter].classList.add('active');
+thumb[counter].classList.add('active');
 
+autoPlay();
 
-function stampImmage() {
-  
+nextBtn.addEventListener('click', function(){
+  next(!isNext);
+})
+prevBtn.addEventListener('click', function(){
+  next(isNext);
+})
+
+function next(isNext){
+  element[counter].classList.remove('active');
+  text[counter].classList.remove('active');
+  thumb[counter].classList.remove('active');
+  if(!isNext){
+    counter++
+    if(counter == 5 ) counter = 0;
+  }else{
+    counter--
+    if(counter < 0) counter = 4;
+  }
+  console.log(counter);
+  element[counter].classList.add('active');
+  text[counter].classList.add('active');
+  thumb[counter].classList.add('active');
 }
 
+function autoPlay(){
+  return auto = setInterval(function(){
+    next()
+  }, 2500)
+}
+
+function stop(){
+  clearInterval(auto)
+}
